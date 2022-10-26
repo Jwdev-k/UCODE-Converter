@@ -12,10 +12,10 @@ public class Start {
         File CRGN = new File(System.getProperty("user.dir") + File.separator + "work" + File.separator + "use_crgn");
         File REGN = new File(System.getProperty("user.dir") + File.separator + "work" + File.separator + "use_regn");
         if (!CRGN.exists()) {
-            CRGN.mkdir();
+            System.out.println(CRGN.mkdir() ? CRGN.getPath() + "에 폴더생성" : null);
         }
         if (!REGN.exists()) {
-            REGN.mkdir();
+            System.out.println(REGN.mkdir() ? REGN.getPath() + "에 폴더생성" : null);
         }
         for (File file : files != null ? files : new File[0]) {
             if (!result) {
@@ -160,7 +160,7 @@ public class Start {
                         + File.separator + "UQ130" + filename.substring(filename.lastIndexOf("."))));
             } else if (file.getName().contains("군사시설보호")) {
                 result = file.renameTo(new File(System.getProperty("user.dir") + File.separator + "work"
-                        + File.separator + "UF401" + filename.substring(filename.lastIndexOf("."))));
+                        + File.separator + "UNA100" + filename.substring(filename.lastIndexOf("."))));
             } else if (file.getName().contains("농업진흥지역")) {
                 result = file.renameTo(new File(System.getProperty("user.dir") + File.separator + "work"
                         + File.separator + "UE101" + filename.substring(filename.lastIndexOf("."))));
