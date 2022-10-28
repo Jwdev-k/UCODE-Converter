@@ -14,8 +14,8 @@ import javax.swing.border.*;
  */
 public class GUI extends JFrame {
     public GUI() {
-        setVisible(true);
         initComponents();
+        setVisible(true);
     }
 
     private void OpenFile() {
