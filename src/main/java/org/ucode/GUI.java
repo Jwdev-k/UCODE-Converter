@@ -22,7 +22,7 @@ public class GUI extends JFrame {
         int ret = fileChooser1.showOpenDialog(null);
         if (ret != JFileChooser.APPROVE_OPTION) {
             JOptionPane.showMessageDialog(null, "폴더를 선택하지 않았습니다.", "경고", JOptionPane.WARNING_MESSAGE);
-            fileChooser1.setCurrentDirectory(null);
+            fileChooser1.setSelectedFile(null);
             path.setText("");
             return;
         }
@@ -31,14 +31,14 @@ public class GUI extends JFrame {
     }
 
     private void ConvertAction() {
-        File directory = fileChooser1.getCurrentDirectory();
-        if (fileChooser1.getCurrentDirectory() != null) {
+        File directory = fileChooser1.getSelectedFile();
+        if (directory != null) {
             int size = directory.listFiles().length;
             progressBar1.setMaximum(size);
             Convert.ChangeUCODE(directory);
             JOptionPane.showMessageDialog(null, "작업 완료", "알림", JOptionPane.INFORMATION_MESSAGE);
             progressBar1.setValue(0);
-            fileChooser1.setCurrentDirectory(null);
+            fileChooser1.setSelectedFile(null);
             path.setText("");
         }
     }
