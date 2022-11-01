@@ -12,6 +12,8 @@ new FormModel {
 			"$sizePolicy": 1
 			"resizable": false
 			"$locationPolicy": 1
+			"defaultCloseOperation": 3
+			"iconImage": new com.jformdesigner.model.SwingIcon( 0, "/icon.png" )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "button1"
 				"text": "폴더선택"
