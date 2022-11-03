@@ -4,6 +4,7 @@
 
 package org.ucode;
 
+import java.awt.*;
 import javax.swing.*;
 import javax.swing.GroupLayout;
 import java.io.File;
@@ -43,64 +44,87 @@ public class GUI extends JFrame {
         }
     }
 
+    public JButton getButton1() {
+        return this.button1;
+    }
+
+    public JButton getButton2() {
+        return this.button2;
+    }
+
+    public JProgressBar getProgressBar1() {
+        return this.progressBar1;
+    }
+
+    public JTextPane getPath() {
+        return this.path;
+    }
+
+    public JFileChooser getFileChooser1() {
+        return this.fileChooser1;
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
-        button1 = new JButton();
-        button2 = new JButton();
-        progressBar1 = new JProgressBar();
-        path = new JTextPane();
-        fileChooser1 = new JFileChooser();
+        this.button1 = new JButton();
+        this.button2 = new JButton();
+        this.progressBar1 = new JProgressBar();
+        this.path = new JTextPane();
+        this.fileChooser1 = new JFileChooser();
 
         //======== this ========
         setTitle("UCODE CONVERTER");
         setResizable(false);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setIconImage(new ImageIcon(getClass().getResource("/icon.png")).getImage());
         var contentPane = getContentPane();
 
         //---- button1 ----
-        button1.setText("\ud3f4\ub354\uc120\ud0dd");
-        button1.addActionListener(e -> OpenFile());
+        this.button1.setText("\ud3f4\ub354\uc120\ud0dd");
+        this.button1.addActionListener(e -> OpenFile());
 
         //---- button2 ----
-        button2.setText("\ubcc0\ud658");
-        button2.addActionListener(e -> ConvertAction());
+        this.button2.setText("\ubcc0\ud658");
+        this.button2.addActionListener(e -> ConvertAction());
 
         //---- path ----
-        path.setEditable(false);
-        path.setEnabled(false);
-        path.setAutoscrolls(false);
+        this.path.setEditable(false);
+        this.path.setEnabled(false);
+        this.path.setAutoscrolls(false);
 
         GroupLayout contentPaneLayout = new GroupLayout(contentPane);
         contentPane.setLayout(contentPaneLayout);
         contentPaneLayout.setHorizontalGroup(
             contentPaneLayout.createParallelGroup()
-                .addComponent(path)
-                .addComponent(progressBar1, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(this.path)
+                .addComponent(this.progressBar1, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(contentPaneLayout.createSequentialGroup()
                     .addContainerGap(154, Short.MAX_VALUE)
-                    .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                        .addComponent(button2, GroupLayout.PREFERRED_SIZE, 82, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(button1))
+                    .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                        .addComponent(this.button2, GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
+                        .addComponent(this.button1, GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE))
                     .addContainerGap(162, Short.MAX_VALUE))
         );
         contentPaneLayout.setVerticalGroup(
             contentPaneLayout.createParallelGroup()
                 .addGroup(contentPaneLayout.createSequentialGroup()
                     .addGap(34, 34, 34)
-                    .addComponent(button1)
+                    .addComponent(this.button1)
                     .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addComponent(button2)
+                    .addComponent(this.button2)
                     .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addComponent(path, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                    .addComponent(this.path, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(progressBar1, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(17, Short.MAX_VALUE))
+                    .addComponent(this.progressBar1, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(45, Short.MAX_VALUE))
         );
-        setSize(400, 235);
-        setLocationRelativeTo(null);
 
         //---- fileChooser1 ----
-        fileChooser1.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-        fileChooser1.setCurrentDirectory(null);
+        this.fileChooser1.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        this.fileChooser1.setCurrentDirectory(null);
+
+        setSize(400, 235);
+        setLocationRelativeTo(null);
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
     }
 

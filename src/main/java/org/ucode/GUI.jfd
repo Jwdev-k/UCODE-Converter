@@ -3,9 +3,14 @@ JFDML JFormDesigner: "8.0.0.0.194" Java: "11.0.13" encoding: "UTF-8"
 new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
+		auxiliary() {
+			"JavaCodeGenerator.defaultVariableGetter": true
+			"JavaCodeGenerator.i18nInitMethod": true
+			"JavaCodeGenerator.memberVariableThis": true
+		}
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {comp path::l:::x, comp progressBar1::t:::x, seq l {space ::154:x, par t {comp button2:::p:82:p, comp button1:::::p}, space ::162:x}}"
-			"$verticalGroup": "par l {seq l {space :p:34:p, comp button1:::p::p, space u:::p, comp button2:::p::p, space u:::p, comp path:::p::p, space :p::p, comp progressBar1:::p:40:p, space ::17:x}}"
+			"$horizontalGroup": "par l {comp path::l:::x, comp progressBar1::t:::x, seq l {space ::154:x, par l:::p {comp button2::::82:x, comp button1::::82:x}, space ::162:x}}"
+			"$verticalGroup": "par l {seq l {space :p:34:p, comp button1:::p::p, space u:::p, comp button2:::p::p, space u:::p, comp path:::p::p, space :p::p, comp progressBar1:::p:40:p, space ::45:x}}"
 		} ) {
 			name: "this"
 			"title": "UCODE CONVERTER"
