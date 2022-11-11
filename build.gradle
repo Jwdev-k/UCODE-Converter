@@ -27,7 +27,10 @@ jar {
 }
 
 launch4j { //used for windows
-    bundledJrePath = 'jre'
+    bundledJrePath = 'jdk'
     bundledJre64Bit = true
     jreMinVersion = '17'
+    copyright = 'GomGom'
+    version = '1.2'
+    textVersion = 'Test Version'
 }
